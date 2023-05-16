@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <the-header-navbar></the-header-navbar>
+    <router-view></router-view>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import TheHeaderNavbar from "../src/components/TheHeaderNavbar.vue"
+export default {
+  name: 'HomeView',
+  components: {
+    
+    TheHeaderNavbar
+    
+    
+  }
+}
+</script>
+
+
 
 <style>
 #app {
