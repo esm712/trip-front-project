@@ -1,9 +1,13 @@
 <template>
-  <div class="home">
-    <the-header-navbar></the-header-navbar>
-   <search-bar :locationInfo ='si'/>
+  
+  <div >
+    <the-side-navbar></the-side-navbar>
+    <div  >
+      <search-bar :locationInfo ='si'/>
     <kakao-map/>
     <tour-list :tourlistData='tourlistData'/>
+    </div>
+
   </div>
 </template>
 
@@ -11,7 +15,7 @@
 import KakaoMap from "../components/tour/KakaoMap.vue"
 import SearchBar from "../components/tour/SearchBar.vue"
 import TourList from "@/components/tour/TourList.vue";
-import TheHeaderNavbar from "@/components/TheHeaderNavbar.vue";
+import TheSideNavbar from "@/components/TheSideNavbar.vue";
 // @ is an alias to /src
 export default {
   name: 'HomeView',
@@ -19,7 +23,7 @@ export default {
     SearchBar,
     KakaoMap,
     TourList,
-    TheHeaderNavbar,
+    TheSideNavbar,
 
   },
   data() {
@@ -42,3 +46,7 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+
+</style>

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import http from "@/api/http";
+import listArticle from "@/api/board";
 
 export default {
   name: "BoardList",
@@ -36,9 +36,21 @@ export default {
     };
   },
   created() {
-    http.get(`/board`).then(({ data }) => {
-      this.articles = data;
-    });
+    let param = {
+      pg: 1,
+      spp: 20,
+      key: null,
+      word: null,
+    };
+    listArticle(
+      param,
+      ({ data }) => {
+        this.articles = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   },
   methods: {
     moveWrite() {
